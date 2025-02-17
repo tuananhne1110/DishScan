@@ -49,6 +49,19 @@ def initialize_camera(camera_index: int, resolution: Tuple[int, int]) -> cv2.Vid
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, resolution[0])
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, resolution[1])
 
+    # Disable auto-focus 
+    if cap.set(cv2.CAP_PROP_AUTOFOCUS, 0):
+        logger.info("Auto-focus disabled")
+    else:
+        logger.warning("Auto-focus control not supported for this camera")
+
+    # Set manual focus to a desired value (range depend on the camera)
+    focus_value = 10
+    if cap.set(cv2.CAP_PROP_FOCUS, focus_value):
+        logger.info(f"Manual focus set to {focus_value}")
+    else:
+        logger.warning("Manual focus control not supported on this camera.")
+        
     # Verify actual resolution
     actual_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     actual_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -133,7 +146,7 @@ def capture_images(
 
 
 def parse_arguments():
-    """Parse command line arguments."""
+    """Parse arguments."""
     parser = argparse.ArgumentParser(
         description="Camera image capture application",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
