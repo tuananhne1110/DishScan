@@ -1,0 +1,7 @@
+yolo_dataset: datas/benchmark/train
+yolo_cfg_file: config/data.yaml
+
+categories:
+  - "fire"
+  - "other"
+  - "smoke"

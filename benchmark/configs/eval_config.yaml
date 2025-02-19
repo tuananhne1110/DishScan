@@ -1,0 +1,26 @@
+ground_truth_dataset: /mnt/d/Workspace/FireSmokeDetection/ai_service/datas/benchmark/train/
+ground_truth_cfg_path: /mnt/d/Workspace/FireSmokeDetection/ai_service/datas/benchmark/data.yaml
+
+
+model:
+  model_path: 
+  conf_threshold: 0.8
+  iou_threshold: 0.7
+  classes:
+    - 'butter_sugar_bread' 
+    - 'chicken_floss_bread' 
+    - 'chicken_floss_sandwich' 
+    - 'cream_puff' 
+    - 'croissant' 
+    - 'donut'
+    - 'muffin'
+    - 'salted_egg_sponge_cake'
+    - 'sandwich'
+    - 'sponge_cake'
+    - 'tiramisu'
+
+failed_cases:
+  visual_folder: failed
+  # if don't want to move failed images into a relabel folder, leave this field as null
+  relabel_folder: relabel
+  iou_threshold: 0.7
