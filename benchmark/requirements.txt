@@ -1,0 +1,3 @@
+opencv-python
+kano-cv
+pycocotools
