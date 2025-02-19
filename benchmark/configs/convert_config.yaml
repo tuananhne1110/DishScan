@@ -2,6 +2,14 @@ yolo_dataset: datas/benchmark/train
 yolo_cfg_file: config/data.yaml
 
 categories:
-  - "fire"
-  - "other"
-  - "smoke"
+    - 'butter_sugar_bread' 
+    - 'chicken_floss_bread' 
+    - 'chicken_floss_sandwich' 
+    - 'cream_puff' 
+    - 'croissant' 
+    - 'donut'
+    - 'muffin'
+    - 'salted_egg_sponge_cake'
+    - 'sandwich'
+    - 'sponge_cake'
+    - 'tiramisu'
