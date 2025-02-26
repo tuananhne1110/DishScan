@@ -10,7 +10,7 @@ from modules.utils import (
     read_yaml_file, 
     calculate_iou,
 )
-from modules.yolov8 import YOLOv8
+from modules.model import YOLOv8
 from modules.failed_cases_enum import FailedCases, FailedCasesFolder
 
 
@@ -69,15 +69,17 @@ def init_folders(failed_folder, relabel_folder):
 
 
 def get_gt_boxes(image_path, gt_cls_dict):
+    label_path = image_path.replace("images", "labels").rsplit(".", 1)[0] + ".txt"  # Adjust path to labels
     yolo_img = YoloImage(image_path)
     gt_boxes = [
         {
             "xyxy": np.array(l["xyxy"]),
             "cls_name": gt_cls_dict[l["class"]],
         }
-        for l in yolo_img.get_labels()
+        for l in yolo_img.get_labels(label_path)  # Pass label_path to get_labels()
     ]
     return gt_boxes  
+
 
 
 def get_det_boxes(model, image, model_cls_dict):
@@ -93,7 +95,7 @@ def get_det_boxes(model, image, model_cls_dict):
 
 
 def main():
-    config = read_yaml_file("/mnt/d/Workspace/FireSmokeDetection/ai_service/convert_json_and_metric_0.1.0/config/eval_config.yaml") 
+    config = read_yaml_file(r"configs/eval_config.yaml") 
 
     dataset_folder = config["ground_truth_dataset"]
     image_folder = os.path.join(dataset_folder, "images")

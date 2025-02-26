@@ -1,11 +1,11 @@
-ground_truth_dataset: /mnt/d/Workspace/FireSmokeDetection/ai_service/datas/benchmark/train/
-ground_truth_cfg_path: /mnt/d/Workspace/FireSmokeDetection/ai_service/datas/benchmark/data.yaml
+ground_truth_dataset: D:\Workspace\DishScan\train
+ground_truth_cfg_path: D:\Workspace\DishScan\benchmark\configs\data.yaml
 
 
 model:
-  model_path: 
+  model_path: D:\Workspace\DishScan\benchmark\models\bread_s_v1.pt
   conf_threshold: 0.8
-  iou_threshold: 0.7
+  iou_threshold: 0.8
   classes:
     - 'butter_sugar_bread' 
     - 'chicken_floss_bread' 
@@ -23,4 +23,4 @@ failed_cases:
   visual_folder: failed
   # if don't want to move failed images into a relabel folder, leave this field as null
   relabel_folder: relabel
-  iou_threshold: 0.7
+  iou_threshold: 0.8

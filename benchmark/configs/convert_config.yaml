@@ -1,5 +1,5 @@
-yolo_dataset: datas/benchmark/train
-yolo_cfg_file: config/data.yaml
+yolo_dataset: D:\Workspace\DishScan\train
+yolo_cfg_file: D:\Workspace\DishScan\benchmark\configs\data.yaml
 
 categories:
     - 'butter_sugar_bread' 

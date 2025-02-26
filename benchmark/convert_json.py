@@ -105,7 +105,7 @@ def yolo2coco(yolo_dataset, categories_dict, yolo_cls_dict):
 
 
 def main():
-    cfg = read_yaml_file("config/convert_config.yaml")
+    cfg = read_yaml_file("configs/convert_config.yaml")
 
     yolo_cfg = read_yaml_file(cfg["yolo_cfg_file"])
 
