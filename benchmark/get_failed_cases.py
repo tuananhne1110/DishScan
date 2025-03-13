@@ -95,7 +95,8 @@ def get_det_boxes(model, image, model_cls_dict):
 
 
 def main():
-    config = read_yaml_file(r"configs/eval_config.yaml") 
+    config = read_yaml_file(r"configs/eval_config.yaml")
+    model_config = read_yaml_file(r"configs/model.yaml")
 
     dataset_folder = config["ground_truth_dataset"]
     image_folder = os.path.join(dataset_folder, "images")
@@ -106,7 +107,7 @@ def main():
     init_folders(failed_folder, relabel_folder)
 
     # Load models
-    model = YOLOv8(config["model"])
+    model = YOLOv8(model_config["model"])
 
     # Load classes dict for mapping
     gt_cfg = read_yaml_file(config["ground_truth_cfg_path"])

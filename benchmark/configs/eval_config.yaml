@@ -1,24 +1,6 @@
 ground_truth_dataset: D:\Workspace\DishScan\train
 ground_truth_cfg_path: D:\Workspace\DishScan\benchmark\configs\data.yaml
 
-
-model:
-  model_path: D:\Workspace\DishScan\benchmark\models\bread_s_v1.pt
-  conf_threshold: 0.8
-  iou_threshold: 0.8
-  classes:
-    - 'butter_sugar_bread' 
-    - 'chicken_floss_bread' 
-    - 'chicken_floss_sandwich' 
-    - 'cream_puff' 
-    - 'croissant' 
-    - 'donut'
-    - 'muffin'
-    - 'salted_egg_sponge_cake'
-    - 'sandwich'
-    - 'sponge_cake'
-    - 'tiramisu'
-
 failed_cases:
   visual_folder: failed
   # if don't want to move failed images into a relabel folder, leave this field as null

@@ -20,8 +20,8 @@ def init_camera():
     return cam
 
 def init_model():
-    config_file = os.path.abspath(r"./benchmark/configs/eval_config.yaml")
-    config = read_yaml_file(config_file) 
+    config_file = os.path.abspath(r"./benchmark/configs/model.yaml")
+    config = read_yaml_file(config_file)
     model = YOLOv8(config["model"])
 
     return model
