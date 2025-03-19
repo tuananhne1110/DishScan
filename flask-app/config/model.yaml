@@ -1,0 +1,16 @@
+model:
+  model_path: ./checkpoints/bread_drink_v2.pt
+  conf_threshold: 0.8
+  iou_threshold: 0.8
+  classes:
+    - 'butter_sugar_bread' 
+    - 'chicken_floss_bread' 
+    - 'chicken_floss_sandwich' 
+    - 'cream_puff' 
+    - 'croissant' 
+    - 'donut'
+    - 'muffin'
+    - 'salted_egg_sponge_cake'
+    - 'sandwich'
+    - 'sponge_cake'
+    - 'tiramisu'
