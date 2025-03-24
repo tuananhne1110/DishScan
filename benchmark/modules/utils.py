@@ -8,6 +8,18 @@ def read_yaml_file(file_path):
     with open(file_path, 'r') as file:
         return yaml.safe_load(file)
     
+def draw_box(img, box):
+    x1, y1, x2, y2 = box["xyxy"]
+    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
+    cv2.putText(
+        img,
+        f"GT: {box['cls_name']} ",
+        (x1, y1 - 10),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        0.9,
+        (0, 0, 255),
+        2,
+    )
 
 def draw_boxes(img, gt_labels, det_boxes):
     for label in gt_labels:
