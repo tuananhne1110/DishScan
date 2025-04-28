@@ -18,4 +18,33 @@ pip install -r requirements.txt
 python main.py
 ```
 
-- The camera stream and YOLOv11 model takes about 30 seconds for initialization, after that, there will be a window represents the frame from the camera capture including the detected bounding boxes for bakery items. 
+- The camera stream and YOLOv11 model takes about 30 seconds for initialization, after that, there will be a window represents the frame from the camera capture including the detected bounding boxes for bakery items.
+
+### Evaluation
+
+- We use Ultralytics built-in YOLO DetectionValidator for the model validation on a test dataset.
+
+#### Prepare your test dataset
+
+- Your datasets should be prepared inside the `/datasets` directory, in YOLO format.
+
+- There should be 2 datasets: train and validation. The dataset should contain 2 sub-directories: `/images` for the images and the annotations in `/labels`.
+
+- In the end, your train dataset should be at `/datasets/train` while your test dataset should be at `/datasets/valid`
+
+#### Run the evaluation
+
+- The evaluation script is prepared at `evaluation.py`, run it via
+
+```sh
+python evaluation.py
+```
+
+- The script will do the evaluation on your test dataset at `/datasets/valid` and output the results including Precision, Recall, mAP50, mAP50-95 and some visualizations.
+
+- The results will be in a sub directory inside `runs/detect` directory, each run will produce a separate directory storing the results.
+
+- The evaluation process produces some visualizations such as: 
+  - confusion matrix.
+  - curves for: F1, Precision, Recall, and Precision-Recall.
+  - example instances from the test dataset, including the true labels and the predicted boxes.
