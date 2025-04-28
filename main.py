@@ -7,8 +7,8 @@ from benchmark.modules.utils import (
 )
 from benchmark.modules.model import YOLOWrapper
 
-def init_camera():
-    cam = cv2.VideoCapture(0)
+def init_camera(camera_index):
+    cam = cv2.VideoCapture(camera_index)
 
     cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
     cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
@@ -23,10 +23,9 @@ def init_model():
     return model
 
 def main():
-  data_yaml_file = os.path.abspath(r"./benchmark/configs/data.yaml")
-  data_config = read_yaml_file(data_yaml_file)
-
-  cam = init_camera()
+  camera_index = 0
+  cam = init_camera(camera_index)
+  
   model = init_model()
 
   while(True):
