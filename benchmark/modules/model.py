@@ -1,8 +1,7 @@
 import numpy as np
 from ultralytics import YOLO
 
-
-class YOLOv8:
+class YOLOWrapper:
 
     def __init__(self, model_cfg):
         self.model = YOLO(model_cfg["model_path"])
