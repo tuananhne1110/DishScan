@@ -1,8 +1,0 @@
-ground_truth_dataset: D:\Workspace\DishScan\train
-ground_truth_cfg_path: D:\Workspace\DishScan\benchmark\configs\data.yaml
-
-failed_cases:
-  visual_folder: failed
-  # if don't want to move failed images into a relabel folder, leave this field as null
-  relabel_folder: relabel
-  iou_threshold: 0.8
