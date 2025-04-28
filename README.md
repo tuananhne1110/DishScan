@@ -69,7 +69,21 @@ If you're running the application inside Docker and need to render GUI, you'll h
       ```
       **Note: If you're using a different display (e.g., virtual display), adjust :0 to :1 or whatever corresponds to your setup.**
 
-7. Running the application
+## Overview 
+![Deepstream_pipeline-1-cam drawio (3)](https://github.com/user-attachments/assets/423460a1-a7b8-467e-a207-5413dbf61e83)
+The deepstream_usb_camera.py follows this pipeline:
+  - v4l2src: Captures video from a camera or other video sources
+  - capsfilter: Defines the format and properties of the incoming video stream (resolution, pixel format).
+  - videoconvert: Converts video pixel formats on the CPU (YUYV to I420).
+  - nvvideoconvert: Converts video pixel formats and memory on the GPU for better performance (I420 to NV12, host-memory to NVMM).
+  - capsfilter: Ensures the video format (NV12) is compatible with the next stages, using GPU memory (NVMM).
+  - nvstreammux: Batches frames for efficient processing, resizes and pads the input frames to match the model's input size.
+  - nvinfer: Runs a deep learning model on the batched frames
+  - nvvideoconvert: Converts the post-inference video from NV12 (GPU memory format) to RGB (for display purposes).
+  - nvdosd: Overlays information (bounding boxes, labels) on the video.
+  - nv3dsink: Render to external monitor.
+
+## Running the application
    ```bash
    cd apps/deepstream-test1
    # Run the application with usb camera
