@@ -56,3 +56,19 @@ python evaluation.py
 ### Model Deployment as Flask API
 
 - The DishScan YOLO model can be run as an API via Flask framework. The details is at [Flask API Deployment](./flask-app/README.md)
+
+### Development
+
+#### Capture the images
+
+- For data collection, the `record.py` script is used.
+
+- After all the dependencies installed, we can run it via:
+
+```sh
+py record.py --camera-index <your_camera_index> --output-dir <output_dir>
+```
+
+- The camera index and output directory can be configured as the command arguments shown as above.
+
+- This script produces a capture window, press the space bar to capture the images, which will be saved to the configured `output_dir`.
