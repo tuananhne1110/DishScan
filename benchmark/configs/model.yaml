@@ -1,5 +1,5 @@
 model:
-  model_path: ./checkpoints/bread_drink_v2.pt
+  model_path: ./checkpoints/dish_scan_v6.pt
   conf_threshold: 0.8
   iou_threshold: 0.8
   classes:
