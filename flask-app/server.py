@@ -28,15 +28,11 @@ def image_from_base64(base64_string):
 @app.route("/model", methods = ["POST"])
 def model_detection():
   data = request.json
-  cam1 = data["camera1"]
-  cam2 = data["camera2"]
-  cam3 = data["camera3"]
+  camera = data["camera"]
 
-  image1 = image_from_base64(cam1)
-  image2 = image_from_base64(cam2)
-  image3 = image_from_base64(cam3)
+  image = image_from_base64(camera)
 
-  predictions = model.infer(image2)
+  predictions = model.infer(image)
 
   predictions_dict = {}
 
