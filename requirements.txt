@@ -1,0 +1,5 @@
+opencv-python
+kano-cv==3.3
+pycocotools
+ultralytics
+pyyaml
