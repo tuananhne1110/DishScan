@@ -17,6 +17,7 @@ cd DeepStream-YOLOv11
 ```
 
 2. Download required libraries
+
 Before building the Docker image, make sure the necessary Python dependencies are downloaded:
 ```bash
 # Download the pyds Python bindings
@@ -25,6 +26,7 @@ wget https://github.com/NVIDIA-AI-IOT/deepstream_python_apps/releases/download/v
 The .whl file must be placed in the directory DeepStream-YOLOv11.
 
 3. Pull the DeepStream Docker container
+
 Run the following command to download the official NVIDIA DeepStream container:
 ```bash
 docker pull nvcr.io/nvidia/deepstream:6.3-triton-multiarch
@@ -37,6 +39,7 @@ docker build -t dishscan:latest .
 ```
 
 5. Configure display (for GUI applications)
+
 If you're running the application inside Docker and need to render GUI, you'll have to set up display access:
    1. On the host system, run these commands to grant the Docker container access to the X11 display:
       ```bash
@@ -58,11 +61,13 @@ If you're running the application inside Docker and need to render GUI, you'll h
           dishscan:latest
       ```
    3. Inside the running Docker container, set the display environment:
+
       Check the display with xrandr:
       ```bash
       xrandr --query
       ```
       If this shows no display, you'll need to set the DISPLAY variable manually.
+
       Set the DISPLAY environment variable to match the display of the host system:
       ```bash
       export DISPLAY=:1
