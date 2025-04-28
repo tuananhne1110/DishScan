@@ -1,6 +1,5 @@
 from flask import Flask, request
 import base64
-import sys
 import os
 import numpy as np
 import cv2
@@ -8,14 +7,14 @@ import cv2
 from src.utils import (
   read_yaml_file
 )
-from src.model import YOLOv8
+from src.model import YOLOWrapper
 
 app = Flask(__name__)
 
 def init_model():
   config_file = os.path.abspath(r"./config/model.yaml")
   config = read_yaml_file(config_file)
-  model = YOLOv8(config["model"])
+  model = YOLOWrapper(config["model"])
 
   return model
 

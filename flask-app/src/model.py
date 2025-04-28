@@ -2,7 +2,7 @@ import numpy as np
 from ultralytics import YOLO
 import os
 
-class YOLOv8:
+class YOLOWrapper:
 
     def __init__(self, model_cfg):
         model_checkpoint = os.path.abspath(model_cfg["model_path"])
