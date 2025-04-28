@@ -90,7 +90,7 @@ If you're running the application inside Docker and need to render GUI, you'll h
       **Note: If you're using a different display (e.g., virtual display), adjust :0 to :1 or whatever corresponds to your setup.**
 
 ## Overview 
-![Deepstream_pipeline-1-cam drawio (3)](https://github.com/user-attachments/assets/423460a1-a7b8-467e-a207-5413dbf61e83)
+![Uploading Untitled Diagram.drawio (1).png…]()
 The deepstream_usb_camera.py follows this pipeline:
   - v4l2src: Captures video from a camera or other video sources
   - capsfilter: Defines the format and properties of the incoming video stream (resolution, pixel format).
