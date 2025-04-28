@@ -5,7 +5,8 @@ import numpy as np
 import cv2
 
 from src.utils import (
-  read_yaml_file
+  read_yaml_file,
+  draw_box
 )
 from src.model import YOLOWrapper
 
@@ -37,14 +38,19 @@ def model_detection():
   predictions_dict = {}
 
   for prediction in predictions:
+    draw_box(image, prediction)
+
     class_id = prediction["cls_id"]
     if (class_id not in predictions_dict):
       predictions_dict[class_id] = 0
     predictions_dict[class_id] += 1
 
+  base64_image = base64.b64encode(image)
+
   res = {
     "total": len(predictions),
-    "products": []
+    "products": [],
+    "processed": base64_image
   }
 
   for class_id in predictions_dict:
