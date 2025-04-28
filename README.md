@@ -17,7 +17,7 @@ cd DeepStream-YOLOv11
 ```
 
 2. Download required libraries
-   Before building the Docker image, make sure the necessary Python dependencies are downloaded:
+Before building the Docker image, make sure the necessary Python dependencies are downloaded:
 ```bash
 # Download the pyds Python bindings
 wget https://github.com/NVIDIA-AI-IOT/deepstream_python_apps/releases/download/v1.1.8/pyds-1.1.8-py3-none-linux_x86_64.whl
@@ -25,7 +25,7 @@ wget https://github.com/NVIDIA-AI-IOT/deepstream_python_apps/releases/download/v
 The .whl file must be placed in the directory DeepStream-YOLOv11.
 
 3. Pull the DeepStream Docker container
-   Run the following command to download the official NVIDIA DeepStream container:
+Run the following command to download the official NVIDIA DeepStream container:
 ```bash
 docker pull nvcr.io/nvidia/deepstream:6.3-triton-multiarch
 ```
