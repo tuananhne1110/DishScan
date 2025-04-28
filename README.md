@@ -6,9 +6,8 @@
 - Jetson platform (Orin Nano, Xavier, etc.)
 - DeepStream SDK 6.3
 - Python 3.10
-**
-  Note: Other OS/DeepStream versions may require minor modifications.
-**
+**Note: Other OS/DeepStream versions may require minor modifications.**
+
 ### Installation
 1. Clone the repository
 ```bash
