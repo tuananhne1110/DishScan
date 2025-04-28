@@ -66,7 +66,7 @@ python evaluation.py
 - After all the dependencies installed, we can run it via:
 
 ```sh
-py record.py --camera-index <your_camera_index> --output-dir <output_dir>
+python record.py --camera-index <your_camera_index> --output-dir <output_dir>
 ```
 
 - The camera index and output directory can be configured as the command arguments shown as above.
