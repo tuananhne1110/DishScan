@@ -9,4 +9,6 @@ This release supports Ubuntu 20.04 for DeepStream SDK 6.3 with Python 3.10. Othe
    Run the following command to download the official NVIDIA DeepStream container:
 ```bash
 docker pull nvcr.io/nvidia/deepstream:6.3-triton-multiarch
-'''
+
+
+fafafsda
