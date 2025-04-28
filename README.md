@@ -52,3 +52,7 @@ python evaluation.py
 ### Model Deployment in Jetson Orin Nano
 
 - The DishScan YOLO model can be integrated to Jetson Orin Nano device. The details is at [DeepStream Deployment](./DeepStream-YOLOv11/README.md)
+
+### Model Deployment as Flask API
+
+- The DishScan YOLO model can be run as an API via Flask framework. The details is at [Flask API Deployment](./flask-app/README.md)
