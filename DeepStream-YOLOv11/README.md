@@ -1,4 +1,4 @@
-# Model Deployment in Jetson Orin Nano
+![Untitled Diagram drawio (1)](https://github.com/user-attachments/assets/5d908fd1-b60d-4cd2-b318-b420bd113b3b)# Model Deployment in Jetson Orin Nano
 
 ### Supported Platforms 
 - Ubuntu 20.04
@@ -90,8 +90,10 @@ If you're running the application inside Docker and need to render GUI, you'll h
       **Note: If you're using a different display (e.g., virtual display), adjust :0 to :1 or whatever corresponds to your setup.**
 
 ## Overview 
-![Uploading Untitled Diagram.drawio (1).png…]()
+
 The deepstream_usb_camera.py follows this pipeline:
+![Untitled Diagram drawio (1)](https://github.com/user-attachments/assets/1e7fb801-489f-4c70-8735-b1f6ea8f16fc)
+
   - v4l2src: Captures video from a camera or other video sources
   - capsfilter: Defines the format and properties of the incoming video stream (resolution, pixel format).
   - videoconvert: Converts video pixel formats on the CPU (YUYV to I420).
