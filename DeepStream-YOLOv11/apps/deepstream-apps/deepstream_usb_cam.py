@@ -169,7 +169,7 @@ def main(args):
     
     print("Playing cam %s " %args[1])
     # caps_v4l2src.set_property('caps', Gst.Caps.from_string("video/x-raw, framerate=30/1"))
-    caps_v4l2src.set_property('caps', Gst.Caps.from_string("video/x-raw, width=640, height=360, framerate=10/1"))
+    caps_v4l2src.set_property('caps', Gst.Caps.from_string("video/x-raw, width=1920, height=1080, framerate=5/1"))
     # caps_v4l2src.set_property('caps', Gst.Caps.from_string("video/x-raw"))
     caps_vidconvsrc.set_property('caps', Gst.Caps.from_string("video/x-raw(memory:NVMM)"))
     source.set_property('device', args[1])
