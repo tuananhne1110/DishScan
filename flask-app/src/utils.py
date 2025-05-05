@@ -1,4 +1,5 @@
 import yaml
+import cv2
 
 def read_yaml_file(file_path):
     with open(file_path, 'r') as file:
