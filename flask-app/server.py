@@ -26,6 +26,12 @@ def image_from_base64(base64_string):
   img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
   return img
 
+def image_to_base64(image):
+  _, buffer = cv2.imencode('.jpg', image)
+  encoded_string = base64.b64encode(buffer).decode('utf-8')
+
+  return encoded_string
+
 @app.route("/model", methods = ["POST"])
 def model_detection():
   data = request.json
@@ -45,7 +51,7 @@ def model_detection():
       predictions_dict[class_id] = 0
     predictions_dict[class_id] += 1
 
-  base64_image = base64.b64encode(image)
+  base64_image = image_to_base64(image)
 
   res = {
     "total": len(predictions),
